@@ -246,7 +246,7 @@ class KonfigurasiController extends Controller
             return redirect('/konfigurasi/jamkerjadept')->with(['success' => 'Data Berhasil Disimpan']);
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect('/konfigurasi/jamkerjadept')->with(['warning' => 'Data Gagal Disimpan']);
+            return redirect('/konfigurasi/jamkerjadept')->with(['warning' => 'Data Gagal Disimpan ' . $e->getMessage()]);
         }
     }
 
