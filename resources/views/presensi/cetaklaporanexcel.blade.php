@@ -90,9 +90,9 @@
                     <span id="title">
                         LAPORAN PRESENSI KARYAWAN<br>
                         PERIODE {{ strtoupper($namabulan[$bulan]) }} {{ $tahun }}<br>
-                        PT. SAPTAINDRA SEJATI<br>
+                        PT. INDOLEM SUKSES MAKMUR<br>
                     </span>
-                    <span><i>Gd. Graha Saptaindra Jl. TB. Simatupang Kav. 18 Cilandak Barat - Jakarta 12430</i></span>
+                    <span><i>Jl. Raya Serang KM 18.5 Desa Bojong Kec. Cikupa Kab. Tangerang 15710</i></span>
                 </td>
             </tr>
         </table>
@@ -192,35 +192,35 @@
 
         <table width="100%" style="margin-top:100px">
             <tr>
-                <td colspan="2" style="text-align: right">Jakarta, {{ date('d-m-Y') }}</td>
+                <td colspan="2" style="text-align: right">Tangerang, {{ date('d-m-Y') }}</td>
             </tr>
             <tr>
                 <td style="text-align: center; vertical-align:bottom" height="100px">
-                    <u>Qiana Aqila</u><br>
+                    <u>(.......................................)</u><br>
                     <i><b>HRD Manager</b></i>
                 </td>
                 <td style="text-align: center; vertical-align:bottom">
-                    <u>Daffa</u><br>
+                    <u>(.......................................)</u><br>
                     <i><b>Direktur</b></i>
                 </td>
             </tr>
         </table>
 
-        <table width="100%" style="margin-top:100px">
+        <!-- <table width="100%" style="margin-top:100px">
             <tr>
-                <td colspan="2" style="text-align: right">Jakarta, {{ date('d-m-Y') }}</td>
+                <td colspan="2" style="text-align: right">Tangerang, {{ date('d-m-Y') }}</td>
             </tr>
             <tr>
                 <td style="text-align: center; vertical-align:bottom" height="100px">
-                    <u>Qiana Aqila</u><br>
+                    <u>(.......................................)</u><br>
                     <i><b>HRD Manager</b></i>
                 </td>
                 <td style="text-align: center; vertical-align:bottom">
-                    <u>Daffa</u><br>
+                    <u>(.......................................)</u><br>
                     <i><b>Direktur</b></i>
                 </td>
             </tr>
-        </table>
+        </table> -->
     </section>
 
 </body>
