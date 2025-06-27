@@ -21,6 +21,7 @@ use Psy\VarDumper\Presenter;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,6 +60,7 @@ Route::middleware(['auth:karyawan'])->group(function () {
     //Presensi
     Route::get('/presensi/{kode_jam_kerja}/create', [PresensiController::class, 'create']);
     Route::get('/presensi/pilihjamkerja', [PresensiController::class, 'pilihjamkerja']);
+    Route::get('/presensi/pilihjamkerja', [PresensiController::class, 'pilihjamkerja'])->middleware(['auth:karyawan']);
     Route::post('/presensi/store', [PresensiController::class, 'store']);
     Route::get('/presensi/scanqr', [PresensiController::class, 'scanqr']);
     Route::post('/presensi/storeqr', [PresensiController::class, 'storeqr']);
