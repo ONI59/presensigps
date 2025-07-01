@@ -110,19 +110,41 @@
                             <td>{{ $d->awal_jam_istirahat }}</td>
                             <td>{{ $d->akhir_jam_istirahat }}</td>
                             <td>
-                                <div class="btn-group">
-                                    <a href="#" class="edit btn btn-info btn-sm"
-                                       kode_jam_kerja="{{ $d->kode_jam_kerja }}">
-                                        Edit
-                                    </a>
-                                    <form action="/konfigurasi/jamkerja/{{ $d->kode_jam_kerja }}/delete" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm delete-confirm">
-                                            Hapus
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
+    <div class="btn-group" role="group">
+        {{-- Tombol Edit (Biru) --}}
+        <a href="#" class="btn btn-sm btn-primary edit d-flex align-items-center justify-content-center"
+           style="width: 36px; height: 36px;"
+           title="Edit"
+           kode_jam_kerja="{{ $d->kode_jam_kerja }}">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="18" height="18" viewBox="0 0 24 24"
+                 stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1"/>
+                <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"/>
+                <path d="M16 5l3 3"/>
+            </svg>
+        </a>
+
+        {{-- Tombol Hapus (Merah) --}}
+        <form action="/konfigurasi/jamkerja/{{ $d->kode_jam_kerja }}/delete" method="POST" style="display:inline">
+            @csrf
+            <button type="submit" class="btn btn-sm btn-danger delete-confirm d-flex align-items-center justify-content-center"
+                    style="width: 36px; height: 36px;" title="Hapus">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="18" height="18" viewBox="0 0 24 24"
+                     stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M4 7h16" />
+                    <path d="M10 11v6" />
+                    <path d="M14 11v6" />
+                    <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                    <path d="M9 7v-3h6v3" />
+                </svg>
+            </button>
+        </form>
+    </div>
+</td>
+
+
                         </tr>
                     @endforeach
                 </tbody>
