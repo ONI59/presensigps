@@ -82,6 +82,7 @@
                             <th>Jam Masuk</th>
                             <th>Akhir Masuk</th>
                             <th>Jam Pulang</th>
+                            <th>Akhir Pulang</th>
                         </tr>
                     </thead>
                     <tbody>

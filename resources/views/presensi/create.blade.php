@@ -64,8 +64,9 @@
         <p>{{ $jamkerja->nama_jam_kerja }}</p>
         <p>Mulai : {{ date('H:i', strtotime($jamkerja->awal_jam_masuk)) }}</p>
         <p>Masuk : {{ date('H:i', strtotime($jamkerja->jam_masuk)) }}</p>
-        <p>Akhir : {{ date('H:i', strtotime($jamkerja->akhir_jam_masuk)) }}</p>
+        <p>Akhir M : {{ date('H:i', strtotime($jamkerja->akhir_jam_masuk)) }}</p>
         <p>Pulang : {{ date('H:i', strtotime($jamkerja->jam_pulang)) }}</p>
+        <p>Akhir P : {{ date('H:i', strtotime($jamkerja->jam_pulang) + 30 * 60) }}</p>
     </div>
     <div class="row">
         <div class="col">
