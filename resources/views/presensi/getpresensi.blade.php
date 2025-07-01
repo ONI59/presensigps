@@ -134,5 +134,4 @@ $foto_out = $d->foto_out ? Storage::url('uploads/absensi/' . $d->foto_out) : nul
             $("#modal-koreksipresensi").modal("show");
         });
     });
-    //harunya udah bener yah
 </script>
