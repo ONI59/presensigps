@@ -134,8 +134,4 @@ function selisih($jam_masuk, $jam_keluar)
             $("#modal-koreksipresensi").modal("show");
         });
     });
-
-
-    // harus nya ini udah bener
 </script>
-
