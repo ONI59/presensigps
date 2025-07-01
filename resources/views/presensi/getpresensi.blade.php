@@ -17,9 +17,9 @@ function selisih($jam_masuk, $jam_keluar)
 
 @foreach ($presensi as $d)
 @php
-    $status = strtolower(trim($d->status ?? ''));
-    $foto_in = $d->foto_in ? Storage::url('uploads/absensi/' . $d->foto_in) : null;
-    $foto_out = $d->foto_out ? Storage::url('uploads/absensi/' . $d->foto_out) : null;
+$status = strtolower(trim($d->status ?? ''));
+$foto_in = $d->foto_in ? Storage::url('uploads/absensi/' . $d->foto_in) : null;
+$foto_out = $d->foto_out ? Storage::url('uploads/absensi/' . $d->foto_out) : null;
 @endphp
 
 <tr>
@@ -31,15 +31,15 @@ function selisih($jam_masuk, $jam_keluar)
     <td>
         {{ $d->nama_jam_kerja ?? '-' }}
         @if($d->jam_masuk && $d->jam_pulang)
-            ({{ $d->jam_masuk }} s/d {{ $d->jam_pulang }})
+        ({{ $d->jam_masuk }} s/d {{ $d->jam_pulang }})
         @endif
     </td>
     <td>{{ $d->jam_in ?? '-' }}</td>
     <td>
         @if ($foto_in)
-            <img src="{{ $foto_in }}" class="avatar" alt="">
+        <img src="{{ $foto_in }}" class="avatar" alt="">
         @else
-            <span class="badge bg-secondary">-</span>
+        <span class="badge bg-secondary">-</span>
         @endif
     </td>
     <td>
@@ -47,49 +47,49 @@ function selisih($jam_masuk, $jam_keluar)
     </td>
     <td>
         @if ($foto_out)
-            <img src="{{ $foto_out }}" class="avatar" alt="">
+        <img src="{{ $foto_out }}" class="avatar" alt="">
         @else
-            <span class="badge bg-secondary">-</span>
+        <span class="badge bg-secondary">-</span>
         @endif
     </td>
     <td>
         @switch($status)
-            @case('h')
-                <span class="badge bg-success">H</span>
-                @break
-            @case('i')
-                <span class="badge bg-warning">I</span>
-                @break
-            @case('s')
-                <span class="badge bg-info">S</span>
-                @break
-            @case('a')
-                <span class="badge bg-danger">A</span>
-                @break
-            @case('c')
-                <span class="badge" style="background-color: #a600ff">C</span>
-                @break
-            @default
-                <span class="badge bg-secondary">?</span>
+        @case('h')
+        <span class="badge bg-success">H</span>
+        @break
+        @case('i')
+        <span class="badge bg-warning">I</span>
+        @break
+        @case('s')
+        <span class="badge bg-info">S</span>
+        @break
+        @case('a')
+        <span class="badge bg-danger">A</span>
+        @break
+        @case('c')
+        <span class="badge" style="background-color: #a600ff">C</span>
+        @break
+        @default
+        <span class="badge bg-secondary">?</span>
         @endswitch
     </td>
     <td>
         @if ($status === 'h' && $d->jam_in && $d->jam_masuk)
-            @if ($d->jam_in >= $d->jam_masuk)
-                @php
-                    $jamterlambat = selisih($d->jam_masuk, $d->jam_in);
-                @endphp
-                <span class="badge bg-danger">Terlambat {{ $jamterlambat }}</span>
-            @else
-                <span class="badge bg-success">Tepat Waktu</span>
-            @endif
+        @if ($d->jam_in >= $d->jam_masuk)
+        @php
+        $jamterlambat = selisih($d->jam_masuk, $d->jam_in);
+        @endphp
+        <span class="badge bg-danger">Terlambat {{ $jamterlambat }}</span>
         @else
-            <span class="badge bg-secondary">-</span>
+        <span class="badge bg-success">Tepat Waktu</span>
+        @endif
+        @else
+        <span class="badge bg-secondary">-</span>
         @endif
     </td>
     <td>
         @if ($d->lokasi_in)
-            <a href="#" class="btn btn-primary btn-sm tampilkanpeta" id="{{ $d->id }}">🗺️</a>
+        <a href="#" class="btn btn-primary btn-sm tampilkanpeta" id="{{ $d->id }}">🗺️</a>
         @endif
         <a href="#" class="btn btn-success btn-sm koreksipresensi" nik="{{ $d->nik }}">✏️</a>
     </td>
