@@ -91,7 +91,15 @@
                             <td>{{ $d->jam_masuk }}</td>
                             <td>{{ $d->akhir_jam_masuk }}</td>
                             <td>{{ $d->jam_pulang }}</td>
-                            <td>{{ \Carbon\Carbon::parse($d->jam_pulang)->addMinutes(30)->format('H:i:s') }}</td>
+                            <@php
+    try {
+        $jamTambahan = \Carbon\Carbon::parse($d->jam_pulang)->addMinutes(30)->format('H:i:s');
+    } catch (\Exception $e) {
+        $jamTambahan = $d->jam_pulang; // fallback, atau tampilkan teks khusus
+    }
+@endphp
+<td>{{ $jamTambahan }}</td>
+
                             <td class="text-center">{{ $d->total_jam }}</td>
                             <td class="text-center">
                                 @if ($d->lintashari == 1)
