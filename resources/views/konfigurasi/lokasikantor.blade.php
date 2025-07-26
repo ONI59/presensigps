@@ -45,7 +45,8 @@
                                                 <path d="M15 7l0 13"></path>
                                             </svg>
                                         </span>
-                                        <input type="text" value="{{ $lok_kantor->lokasi_kantor }}" id="lokasi_kantor" class="form-control" placeholder="Lokasi Kantor" name="lokasi_kantor">
+                                        <!--<input type="text" value="{{ $lok_kantor->lokasi_kantor }}" id="lokasi_kantor" class="form-control" placeholder="Lokasi Kantor" name="lokasi_kantor">-->
+                                        <input type="text" value="{{ $lok_kantor->radius ?? 30 }}" id="radius" class="form-control" placeholder="Radius" name="radius">
                                     </div>
                                 </div>
                             </div>

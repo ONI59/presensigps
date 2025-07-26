@@ -206,7 +206,8 @@
                                         <path d="M12 12v9"></path>
                                     </svg>
                                 </span>
-                                <input type="text" id="radius_cabang" value="" class="form-control" name="radius_cabang" placeholder="Radius Cabang">
+                                <!--<input type="text" id="radius_cabang" value="" class="form-control" name="radius_cabang" placeholder="Radius Cabang">-->
+                                <input type="text" id="radius_cabang" value="10" class="form-control" name="radius_cabang" placeholder="Radius Cabang">
                             </div>
                         </div>
                     </div>
@@ -257,14 +258,14 @@
         $(".edit").click(function() {
             var kode_cabang = $(this).attr('kode_cabang');
             $.ajax({
-                type: 'POST'
-                , url: '/cabang/edit'
-                , cache: false
-                , data: {
-                    _token: "{{ csrf_token(); }}"
-                    , kode_cabang: kode_cabang
-                }
-                , success: function(respond) {
+                type: 'POST',
+                url: '/cabang/edit',
+                cache: false,
+                data: {
+                    _token: "{{ csrf_token(); }}",
+                    kode_cabang: kode_cabang
+                },
+                success: function(respond) {
                     $("#loadeditform").html(respond);
                 }
             });
@@ -275,20 +276,18 @@
             var form = $(this).closest('form');
             e.preventDefault();
             Swal.fire({
-                title: 'Apakah Anda Yakin Data Ini Mau Di Hapus ?'
-                , text: "Jika Ya Maka Data Akan Terhapus Permanent"
-                , icon: 'warning'
-                , showCancelButton: true
-                , confirmButtonColor: '#3085d6'
-                , cancelButtonColor: '#d33'
-                , confirmButtonText: 'Ya, Hapus Saja!'
+                title: 'Apakah Anda Yakin Data Ini Mau Di Hapus ?',
+                text: "Jika Ya Maka Data Akan Terhapus Permanent",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya, Hapus Saja!'
             }).then((result) => {
                 if (result.isConfirmed) {
                     form.submit();
                     Swal.fire(
-                        'Deleted!'
-                        , 'Data Berhasil Di Hapus'
-                        , 'success'
+                        'Deleted!', 'Data Berhasil Di Hapus', 'success'
                     )
                 }
             })
@@ -303,10 +302,10 @@
             if (kode_cabang == "") {
                 // alert('Nik Harus Diisi');
                 Swal.fire({
-                    title: 'Warning!'
-                    , text: 'Kode Cabang Harus Diisi !'
-                    , icon: 'warning'
-                    , confirmButtonText: 'Ok'
+                    title: 'Warning!',
+                    text: 'Kode Cabang Harus Diisi !',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok'
                 }).then((result) => {
                     $("#kode_cabang").focus();
                 });
@@ -315,10 +314,10 @@
             } else if (nama_cabang == "") {
                 // alert('Nik Harus Diisi');
                 Swal.fire({
-                    title: 'Warning!'
-                    , text: 'Nama Cabang Harus Diisi !'
-                    , icon: 'warning'
-                    , confirmButtonText: 'Ok'
+                    title: 'Warning!',
+                    text: 'Nama Cabang Harus Diisi !',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok'
                 }).then((result) => {
                     $("#nama_cabang").focus();
                 });
@@ -327,10 +326,10 @@
             } else if (lokasi_cabang == "") {
                 // alert('Nik Harus Diisi');
                 Swal.fire({
-                    title: 'Warning!'
-                    , text: 'Lokasi Cabang Harus Diisi !'
-                    , icon: 'warning'
-                    , confirmButtonText: 'Ok'
+                    title: 'Warning!',
+                    text: 'Lokasi Cabang Harus Diisi !',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok'
                 }).then((result) => {
                     $("#lokasi_cabang").focus();
                 });
@@ -339,10 +338,10 @@
             } else if (radius_cabang == "") {
                 // alert('Nik Harus Diisi');
                 Swal.fire({
-                    title: 'Warning!'
-                    , text: 'Radius Cabang Harus Diisi !'
-                    , icon: 'warning'
-                    , confirmButtonText: 'Ok'
+                    title: 'Warning!',
+                    text: 'Radius Cabang Harus Diisi !',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok'
                 }).then((result) => {
                     $("#radius_cabang").focus();
                 });
@@ -351,6 +350,5 @@
             }
         });
     });
-
 </script>
 @endpush
